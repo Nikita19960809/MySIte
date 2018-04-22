@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="question">
+        {% if question.created_at %}
+            <div class="date">
+                {{ question.created_at }}
+            </div>
+        {% endif %}
+
+        <p>{{ question.description|linebreaksbr }}</p>
+
+{#     {% for answer in question.answers %}#}
+{#         <p> {{ answer.description }}</p>#}
+{#         <h3>{{ answer.author_answer }} </h3>#}
+{#        {% endfor %}#}
+{#        <p> {{ question.category_quest }}</p>#}
+
+    </div>
+
+     <a href="{% url "main" %}">Main page</a>
+{% endblock %}

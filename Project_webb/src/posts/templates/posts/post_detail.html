@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.created_at %}
+            <div class="date">
+                {{ post.created_at }}
+            </div>
+        {% endif %}
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.description|linebreaksbr }}</p>
+
+    {% for tag in categories %}
+       <p><a href="{% url 'tags:tag_detail' pk=tag.pk %}">{{ tag }}</a></p>
+
+
+    {% endfor %}
+    </div>
+
+     <a href="{% url "main" %}">Main page</a>
+{% endblock %}

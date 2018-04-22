@@ -1,0 +1,16 @@
+{% extends "core/base.html" %}
+
+{% block title %}Список категорий{% endblock %}
+
+{% block content %}
+    {% for tag in object_list %}
+         {% if tag.is_archive is False %}
+        <div>
+           <h1><a href="{% url 'tags:tag_detail' pk=tag.pk %}">{{ tag.title }}</a></h1>
+
+        </div>
+        {% endif %}
+    {% endfor %}
+
+     <a href="{% url "main" %}">Main page</a>
+{% endblock %}

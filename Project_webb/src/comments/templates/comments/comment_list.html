@@ -1,0 +1,12 @@
+{% extends "core/base.html" %}
+
+{% block title %}Список комментов{% endblock %}
+
+{% block content %}
+    {% for comment in object_list %}
+        <div>
+            <a href="{% url "" %}">{{ comment.author }}</a>
+            <div>{{ comment.description }}</div>
+        </div>
+    {% endfor %}
+{% endblock %}

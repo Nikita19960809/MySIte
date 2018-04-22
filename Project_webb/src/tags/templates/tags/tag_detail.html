@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="tag">
+
+        <h1>{{ category.title }}</h1>
+
+        Posts:
+        {% for blog in posts %}
+            <p><a href="{% url 'posts:post_detail' pk=blog.pk %}">{{ blog.title }}</a></p>
+
+        {% endfor %}
+
+    </div>
+
+     <a href="{% url "main" %}">Main page</a>
+{% endblock %}

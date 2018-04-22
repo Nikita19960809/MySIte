@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    {% for question in object_list %}
+        <div class="question">
+            <div class="date">
+                {{ question.created_at }}
+
+            </div>
+
+           <h1><a href="{% url 'questions:question_detail' pk=question.pk %}">{{ question.description }}</a></h1>
+
+               </div>
+
+
+
+{#        {% for tag in post.categories %}#}
+{#            <div class = "tags">#}
+{#            <h1><a href="{% url 'tags:tag_detail' pk=tag.pk %}">{{ tag.title }}</a></h1>#}
+{#            </div>#}
+{#        {% endfor %}#}
+    {% endfor %}
+
+
+     <a href="{% url "main" %}">Main page</a>
+
+
+
+{% endblock %}
